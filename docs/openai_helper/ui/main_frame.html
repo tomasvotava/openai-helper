@@ -1,0 +1,2066 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>openai_helper.ui.main_frame API documentation</title>
+<meta name="description" content="UI Components for OpenAI Helper" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>openai_helper.ui.main_frame</code></h1>
+</header>
+<section id="section-intro">
+<p>UI Components for OpenAI Helper</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;UI Components for OpenAI Helper&#34;&#34;&#34;
+
+import os
+import queue
+import re
+import threading
+import tkinter as tk
+from pathlib import Path
+from tkinter import filedialog, messagebox, ttk, simpledialog, scrolledtext
+from typing import Any, Callable, TypedDict, TYPE_CHECKING
+
+import openai
+
+from openai_helper.context import ContextProvider
+
+if TYPE_CHECKING:
+    from openai_helper.ui.app import App
+
+ResultDict = TypedDict(&#34;ResultDict&#34;, {&#34;result&#34;: Any})
+ErrorDict = TypedDict(&#34;ErrorDict&#34;, {&#34;error&#34;: str, &#34;exception&#34;: Exception})
+PresetDict = TypedDict(
+    &#34;PresetDict&#34;,
+    {&#34;regex_whitelist&#34;: str, &#34;regex_blacklist&#34;: str, &#34;regex_path_whitelist&#34;: str, &#34;regex_path_blacklist&#34;: str},
+)
+
+
+configuration_presets: dict[str, PresetDict] = {
+    &#34;python&#34;: {
+        &#34;regex_whitelist&#34;: r&#34;\.py$|\.toml$|requirements\.txt$|requirements(\.|-)\.txt$&#34;,
+        &#34;regex_blacklist&#34;: r&#34;__\w+__\.py$&#34;,
+        &#34;regex_path_blacklist&#34;: r&#34;\/__\w+__\/|\.venv\/|venv\/&#34;,
+        &#34;regex_path_whitelist&#34;: r&#34;&#34;,
+    },
+}
+
+
+class BackgroundTask(threading.Thread):
+    &#34;&#34;&#34;Background task&#34;&#34;&#34;
+
+    def __init__(self, master: &#34;MainFrame&#34;, target, *args, result_queue: queue.Queue | None = None, **kwargs):
+        super().__init__()
+        self.master = master
+        self.result_queue = result_queue or queue.Queue()
+        self.target = target
+        self.args = args
+        self.kwargs = kwargs
+
+    def __call__(
+        self,
+        on_success: Callable[[&#34;MainFrame&#34;, ResultDict], None],
+        on_error: Callable[[&#34;MainFrame&#34;, ErrorDict], None] | None = None,
+    ):
+        &#34;&#34;&#34;Call the task and run handlers for either success or error.
+        The handlers are always passed the result dictionary (or error dictionary on error)
+        and the MainFrame instance.
+        &#34;&#34;&#34;
+        self.start()
+        self.master.after(100, self._check_result, on_success, on_error)
+
+    def _check_result(
+        self,
+        on_success: Callable[[&#34;MainFrame&#34;, ResultDict], None],
+        on_error: Callable[[&#34;MainFrame&#34;, ErrorDict], None] | None = None,
+    ):
+        &#34;&#34;&#34;Check if the task has finished and run the appropriate handler&#34;&#34;&#34;
+        if self.result_queue.empty():
+            self.master.after(100, self._check_result, on_success, on_error)
+            return
+        result = self.result_queue.get()
+        if &#34;error&#34; in result:
+            if on_error:
+                on_error(self.master, result)
+            else:
+                messagebox.showerror(result[&#34;error&#34;], str(result[&#34;exception&#34;]))
+        else:
+            on_success(self.master, result)
+
+    def run(self):
+        &#34;&#34;&#34;Run the task&#34;&#34;&#34;
+        try:
+            result = self.target(*self.args, **self.kwargs)
+        except Exception as error:  # pylint: disable=broad-except
+            self.result_queue.put({&#34;error&#34;: &#34;Unexpected error occurred&#34;, &#34;exception&#34;: error})
+            return
+        self.result_queue.put({&#34;result&#34;: result})
+
+
+class ModelProviderBackgroundTask(BackgroundTask):
+    &#34;&#34;&#34;Background task providing OpenAI models&#34;&#34;&#34;
+
+    def __init__(self, master: &#34;MainFrame&#34;, result_queue: queue.Queue | None = None, api_token: str = &#34;&#34;):
+        super().__init__(master=master, target=self.list_models, result_queue=result_queue, api_token=api_token)
+
+    def list_models(self, api_token: str):
+        &#34;&#34;&#34;List OpenAI models&#34;&#34;&#34;
+        openai.api_key = api_token
+        return [
+            model[&#34;id&#34;]
+            for model in openai.Model.list()[&#34;data&#34;]
+            if str(model[&#34;root&#34;]).startswith((&#34;code-&#34;, &#34;text-&#34;, &#34;gpt-&#34;))
+        ]
+
+
+class CompletionAPIBackgroundTask(BackgroundTask):
+    &#34;&#34;&#34;Background task providing an OpenAI completion&#34;&#34;&#34;
+
+    def __init__(
+        self,
+        master: &#34;MainFrame&#34;,
+        result_queue: queue.Queue | None = None,
+        api_token: str = &#34;&#34;,
+        prompt: str = &#34;&#34;,
+        context_provider: ContextProvider | None = None,
+        max_tokens: int = 500,
+        model: str = &#34;davinci&#34;,
+    ):
+        self.api_token = api_token
+        self.prompt = prompt
+        self.context_provider = context_provider
+        self.max_tokens = max_tokens
+        self.model = model
+        super().__init__(master=master, target=self.get_completion, result_queue=result_queue)
+
+    def get_completion(self):
+        &#34;&#34;&#34;Get completion based on provided prompt&#34;&#34;&#34;
+        openai.api_key = self.api_token
+        return openai.ChatCompletion.create(
+            model=self.model,
+            messages=[
+                {&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: self.prompt},
+                {&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: self.context_provider.get_context()},
+            ],
+            max_tokens=self.max_tokens,
+        )
+
+
+class ModelProviderThread(threading.Thread):
+    &#34;&#34;&#34;Provide OpenAI models&#34;&#34;&#34;
+
+    def __init__(self, result_queue: queue.Queue, api_token: str):
+        super().__init__()
+        self.result_queue = result_queue
+        self.api_token = api_token
+
+    def run(self):
+        &#34;&#34;&#34;Provide OpenAI models&#34;&#34;&#34;
+        openai.api_key = self.api_token
+        try:
+            models = [
+                model[&#34;id&#34;]
+                for model in openai.Model.list()[&#34;data&#34;]
+                if str(model[&#34;root&#34;]).startswith((&#34;code-&#34;, &#34;text-&#34;, &#34;gpt-&#34;))
+            ]
+            self.result_queue.put({&#34;result&#34;: sorted(models)})
+        except Exception as error:  # pylint: disable=broad-except
+            self.result_queue.put({&#34;error&#34;: error})
+
+
+class FileProviderThread(threading.Thread):
+    &#34;&#34;&#34;Thread calculating file paths and their token length&#34;&#34;&#34;
+
+    def __init__(
+        self,
+        result_queue: queue.Queue,
+        context_provider: ContextProvider,
+    ):
+        super().__init__()
+        self.result_queue = result_queue
+        self.provider = context_provider
+
+    def run(self):
+        &#34;&#34;&#34;Calculate file paths and their token length&#34;&#34;&#34;
+        try:
+            result = [{&#34;tokens&#34;: tokens, &#34;path&#34;: path} for tokens, path, _ in self.provider.iter_files()]
+        except Exception as error:  # pylint: disable=broad-except
+            self.result_queue.put({&#34;error&#34;: &#34;Unexpected error occurred&#34;, &#34;exception&#34;: error})
+            return
+        total_tokens = sum(file[&#34;tokens&#34;] for file in result)
+        self.result_queue.put({&#34;result&#34;: result, &#34;total_tokens&#34;: total_tokens})
+
+
+class CompletionDialog(tk.Toplevel):
+    &#34;&#34;&#34;Dialog for OpenAI completion&#34;&#34;&#34;
+
+    def __init__(self, master: &#34;MainFrame&#34;, completion: str):
+        self.completion = completion
+        super().__init__(master)
+        self.title(&#34;Completion&#34;)
+        self.textarea = scrolledtext.ScrolledText(self, width=80, height=20)
+        self.textarea.insert(tk.END, self.completion)
+        self.textarea.pack(fill=&#34;both&#34;, expand=True)
+        self.grab_set()
+        self.transient(master.root)
+
+
+class ProgressDialog(tk.Toplevel):
+    &#34;&#34;&#34;Display a dialog window to make the user wait&#34;&#34;&#34;
+
+    def __init__(self, master: &#34;MainFrame&#34;, title: str = &#34;Please wait...&#34;):
+        super().__init__(master)
+        self.title(title)
+        ttk.Label(self, text=&#34;Please wait, there&#39;s an operation under way...&#34;).pack()
+        self.transient(master.root)
+
+
+class OpenAISettingsFrame(ttk.Labelframe):
+    &#34;&#34;&#34;OpenAI settings frame&#34;&#34;&#34;
+
+    def __init__(self, master: &#34;MainFrame&#34;, text: str):
+        super().__init__(master, text=text)
+        self.root = master
+        self.openai_api_token = tk.StringVar(value=self.root.root.configuration.openai_token or &#34;&#34;)
+        self.selected_model = tk.StringVar(value=self.root.root.configuration.openai_model or &#34;&#34;)
+        self.max_tokens = tk.StringVar(value=self.root.root.configuration.openai_max_tokens or &#34;500&#34;)
+        ttk.Label(self, text=&#34;OpenAI API token:&#34;).grid(column=0, row=0, sticky=&#34;w&#34;, padx=5)
+        ttk.Entry(self, textvariable=self.openai_api_token).grid(column=1, columnspan=5, row=0, sticky=(&#34;nsew&#34;), padx=5)
+
+        ttk.Label(self, text=&#34;Model:&#34;).grid(column=0, row=1, sticky=&#34;w&#34;, padx=5)
+        self.models_combobox = ttk.Combobox(self, textvariable=self.selected_model, values=(), state=&#34;readonly&#34;)
+        self.models_combobox.grid(column=1, row=1, columnspan=4, sticky=(&#34;nsew&#34;), padx=5)
+        ttk.Button(self, text=&#34;Refresh models&#34;, command=self.refresh_models).grid(
+            column=5, row=1, sticky=&#34;ew&#34;, padx=5, pady=5
+        )
+
+        ttk.Label(self, text=&#34;Max tokens:&#34;).grid(column=0, row=2, sticky=&#34;w&#34;, padx=5)
+        ttk.Entry(self, textvariable=self.max_tokens).grid(column=1, row=2, sticky=(&#34;nsew&#34;), padx=5)
+
+        self.columnconfigure(1, weight=1)
+        self.openai_api_token.trace_add(
+            &#34;write&#34;,
+            lambda *_: self.root.update_config(&#34;openai_token&#34;, self.openai_api_token.get()),
+        )
+
+        self.selected_model.trace_add(
+            &#34;write&#34;,
+            lambda *_: self.root.update_config(&#34;openai_model&#34;, self.selected_model.get()),
+        )
+
+        self.max_tokens.trace_add(&#34;write&#34;, self._trace_max_tokens)
+
+    def _trace_max_tokens(self, *_):
+        &#34;&#34;&#34;Trace max tokens&#34;&#34;&#34;
+        self.max_tokens.set(str(self.root.extract_int(self.max_tokens.get())))
+        self.root.update_config(&#34;openai_max_tokens&#34;, self.max_tokens.get())
+
+    def refresh_models(self):
+        &#34;&#34;&#34;Refresh list of models&#34;&#34;&#34;
+        if not self.openai_api_token.get():
+            messagebox.showerror(&#34;Error&#34;, &#34;OpenAI API token is not set&#34;)
+            return
+        self.root.disable()
+        task = ModelProviderBackgroundTask(master=self, api_token=self.openai_api_token.get())
+        task(lambda _, result: self.update_models_list(result[&#34;result&#34;]), self.master.show_background_task_error)
+
+    def update_models_list(self, models: list[str]):
+        &#34;&#34;&#34;Update models list&#34;&#34;&#34;
+        self.selected_model.set(&#34;&#34;)
+        self.models_combobox.delete(0, &#34;end&#34;)
+        self.models_combobox[&#34;values&#34;] = tuple(sorted(models))
+        self.root.enable()
+
+
+class OptionsFrame(ttk.Labelframe):
+    &#34;&#34;&#34;Options frame&#34;&#34;&#34;
+
+    def __init__(self, master: ttk.Widget, text: str):
+        super().__init__(master, text=text)
+        self.total_tokens = tk.IntVar(value=0)
+        self.regex_whitelist = tk.StringVar(value=r&#34;&#34;)
+        self.regex_blacklist = tk.StringVar(value=r&#34;&#34;)
+        self.regex_path_whitelist = tk.StringVar(value=r&#34;&#34;)
+        self.regex_path_blacklist = tk.StringVar(value=r&#34;&#34;)
+        ttk.Label(self, text=&#34;Total tokens:&#34;).grid(column=0, row=0, sticky=&#34;w&#34;, padx=5)
+        ttk.Label(self, textvariable=self.total_tokens).grid(column=1, row=0, sticky=&#34;w&#34;, padx=5)
+
+        ttk.Label(self, text=&#34;Regex whitelist:&#34;).grid(column=0, row=1, sticky=&#34;w&#34;, padx=5)
+        ttk.Entry(self, textvariable=self.regex_whitelist).grid(column=1, row=1, columnspan=5, sticky=(&#34;ew&#34;), padx=5)
+        ttk.Label(self, text=&#34;Regex blacklist:&#34;).grid(column=0, row=2, sticky=&#34;w&#34;, padx=5)
+        ttk.Entry(self, textvariable=self.regex_blacklist).grid(column=1, row=2, columnspan=5, sticky=(&#34;ew&#34;), padx=5)
+        ttk.Label(self, text=&#34;Regex path whitelist:&#34;).grid(column=0, row=3, sticky=&#34;w&#34;, padx=5)
+        ttk.Entry(self, textvariable=self.regex_path_whitelist).grid(
+            column=1, row=3, columnspan=5, sticky=(&#34;ew&#34;), padx=5
+        )
+        ttk.Label(self, text=&#34;Regex path blacklist:&#34;).grid(column=0, row=4, sticky=&#34;w&#34;, padx=5)
+        ttk.Entry(self, textvariable=self.regex_path_blacklist).grid(
+            column=1, row=4, columnspan=5, sticky=(&#34;ew&#34;), padx=5
+        )
+
+
+class FileOptionsFrame(ttk.Labelframe):
+    &#34;&#34;&#34;File options frame&#34;&#34;&#34;
+
+    def __init__(self, master: ttk.Widget, text: str):
+        super().__init__(master, text=text)
+        self.recursive = tk.BooleanVar(value=True)
+        self.allow_hidden_subdirectories = tk.BooleanVar(value=False)
+
+        self.skip_unreadable = tk.BooleanVar(value=True)
+        self.skip_empty_files = tk.BooleanVar(value=False)
+        ttk.Checkbutton(self, text=&#34;Recursive&#34;, variable=self.recursive).grid(column=0, row=0, sticky=&#34;w&#34;, padx=5)
+        ttk.Checkbutton(self, text=&#34;Allow hidden subdirectories&#34;, variable=self.allow_hidden_subdirectories).grid(
+            column=1, row=0, sticky=&#34;w&#34;, padx=5
+        )
+        ttk.Checkbutton(self, text=&#34;Skip unreadable files&#34;, variable=self.skip_unreadable).grid(
+            column=0, row=1, sticky=&#34;w&#34;, padx=5
+        )
+        ttk.Checkbutton(self, text=&#34;Skip empty files&#34;, variable=self.skip_empty_files).grid(
+            column=1, row=1, sticky=&#34;w&#34;, padx=5
+        )
+
+        self.grid(column=0, row=5, columnspan=2, sticky=&#34;ew&#34;, padx=5, pady=5)
+
+
+class MainFrame(ttk.Frame):
+    &#34;&#34;&#34;Main application frame&#34;&#34;&#34;
+
+    def __init__(self, root: &#34;App&#34;):
+        super().__init__(root)
+        self.root = root
+        self._progress: ProgressDialog | None = None
+
+        self.project_path = tk.StringVar(value=os.getcwd())
+        self.prompt = tk.StringVar(
+            value=(
+                &#34;Write a brief README.md file for this project. &#34;
+                &#34;I will provide all of the files&#39; contents along with the files&#39; relative paths. &#34;
+                &#34;Do not, unless neccessary, comment on individual files but rather on the project&#39;s &#34;
+                &#34;usage and purpose.&#34;
+            )
+        )
+
+        self.theme = tk.StringVar(value=self.root.configuration.theme or &#34;default&#34;)
+        self._set_theme()
+
+        self.main_menu = tk.Menu(self.master)
+        self.theme_menu = tk.Menu(self.main_menu, tearoff=False)
+        for theme in sorted(self.root.themes):
+            self.theme_menu.add_radiobutton(label=theme, command=self._set_theme, value=theme, variable=self.theme)
+        self.main_menu.add_cascade(label=&#34;Theme&#34;, menu=self.theme_menu)
+        self.root.config(menu=self.main_menu)
+
+        self.preset_menu = tk.Menu(self.main_menu, tearoff=False)
+        self._create_preset_menu()
+        self.main_menu.add_cascade(label=&#34;Presets&#34;, menu=self.preset_menu)
+
+        self.pack(fill=&#34;both&#34;, expand=True)  # , padx=10, pady=10)
+
+        label = ttk.Label(self, text=&#34;Project path:&#34;)
+        path_input = ttk.Entry(self, textvariable=self.project_path)
+        button = ttk.Button(self, text=&#34;Browse&#34;)
+        scan_button = ttk.Button(self, text=&#34;Scan&#34;)
+
+        label.grid(column=0, row=0, sticky=&#34;w&#34;, padx=5)
+        path_input.grid(
+            column=1,
+            row=0,
+            sticky=(&#34;ew&#34;),
+            padx=5,
+        )
+        button.grid(column=2, row=0, sticky=&#34;e&#34;, padx=5)
+        scan_button.grid(column=3, row=0, sticky=&#34;w&#34;, pady=5)
+
+        self.options_frame = OptionsFrame(self, text=&#34;Options&#34;)
+        self.file_options_frame = FileOptionsFrame(self.options_frame, text=&#34;File options&#34;)
+
+        self.openai_options_frame = OpenAISettingsFrame(self, text=&#34;OpenAI&#34;)
+
+        self.options_frame.grid(column=0, row=2, columnspan=4, rowspan=6, sticky=&#34;ew&#34;, padx=5, pady=5)
+        self.options_frame.columnconfigure(1, weight=1)
+        self.openai_options_frame.grid(column=0, row=8, columnspan=4, sticky=&#34;ew&#34;, padx=5, pady=5)
+
+        button.bind(&#34;&lt;Button-1&gt;&#34;, lambda _: self.browse())
+        scan_button.bind(&#34;&lt;Button-1&gt;&#34;, lambda _: self.scan())
+
+        self.columnconfigure(1, weight=1)
+
+        self.filelist = ttk.Treeview(self, columns=(&#34;path&#34;, &#34;tokens&#34;), show=&#34;headings&#34;)
+        self.filelist.column(&#34;path&#34;, anchor=&#34;w&#34;, stretch=True)
+        self.filelist.column(&#34;tokens&#34;, anchor=&#34;e&#34;, width=100, stretch=False)
+        self.filelist.heading(&#34;path&#34;, text=&#34;Path&#34;, command=lambda: self._treeview_sort_by_column(self.filelist, &#34;path&#34;))
+        self.filelist.heading(
+            &#34;tokens&#34;,
+            text=&#34;Tokens&#34;,
+            command=lambda: self._treeview_sort_by_column(self.filelist, &#34;tokens&#34;, numeric=True),
+        )
+
+        self.filelist_scroll = ttk.Scrollbar(self, orient=&#34;vertical&#34;, command=self.filelist.yview)
+        self.filelist.grid(column=0, row=1, columnspan=4, sticky=(&#34;nsew&#34;), pady=5)
+        self.filelist_scroll.grid(column=4, row=1, sticky=(&#34;ns&#34;), pady=5)
+        self.filelist.configure(yscrollcommand=self.filelist_scroll.set)
+
+        ttk.Label(self, text=&#34;Prompt:&#34;).grid(column=0, row=11)
+        ttk.Entry(self, textvariable=self.prompt).grid(
+            column=0, row=12, columnspan=5, rowspan=7, sticky=(&#34;nsew&#34;), padx=5, pady=5
+        )
+
+        ttk.Button(self, text=&#34;Generate&#34;, command=self.generate).grid(
+            column=0, row=19, columnspan=5, sticky=(&#34;ew&#34;), padx=5, pady=5
+        )
+
+    def disable(self, title: str = &#34;Please wait...&#34;):
+        &#34;&#34;&#34;Disable all widgets by showing a modal window over the main window&#34;&#34;&#34;
+        self._progress = ProgressDialog(self, title=title)
+
+    def enable(self):
+        &#34;&#34;&#34;Enable all widgets by closing the modal window&#34;&#34;&#34;
+        if self._progress:
+            self._progress.destroy()
+            self._progress = None
+
+    def update_config(self, key: str, value: Any):
+        &#34;&#34;&#34;Update configuration value&#34;&#34;&#34;
+        setattr(self.root.configuration, key, value)
+
+    def _create_preset_menu(self):
+        self.preset_menu.delete(0, &#34;end&#34;)
+        for preset in sorted(configuration_presets):
+            self.preset_menu.add_command(
+                label=preset,
+                command=lambda preset=preset: self.apply_preset(preset),  # type: ignore
+            )
+        self.preset_menu.add_separator()
+        for preset in sorted(self.root.configuration.presets or {}):
+            self.preset_menu.add_command(
+                label=preset,
+                command=lambda preset=preset: self.apply_preset(preset),  # type: ignore
+            )
+        self.preset_menu.add_command(label=&#34;Save current as preset...&#34;, command=self.save_preset)
+
+    def extract_int(self, string: str) -&gt; int:
+        &#34;&#34;&#34;Extract integer from string&#34;&#34;&#34;
+        return int(re.sub(r&#34;\D&#34;, &#34;&#34;, string) or &#34;0&#34;)
+
+    def save_preset(self):
+        &#34;&#34;&#34;Save current configuration as a preset&#34;&#34;&#34;
+        preset_name = simpledialog.askstring(&#34;Save preset&#34;, &#34;Enter preset name&#34;)
+        if not preset_name:
+            return
+        self.root.configuration.presets = {
+            **(self.root.configuration.presets or {}),
+            preset_name: {
+                &#34;regex_whitelist&#34;: self.options_frame.regex_whitelist.get(),
+                &#34;regex_blacklist&#34;: self.options_frame.regex_blacklist.get(),
+                &#34;regex_path_whitelist&#34;: self.options_frame.regex_path_whitelist.get(),
+                &#34;regex_path_blacklist&#34;: self.options_frame.regex_path_blacklist.get(),
+            },
+        }
+        self._create_preset_menu()
+
+    def apply_preset(self, preset: str | PresetDict):
+        &#34;&#34;&#34;Apply predefined preset either by its name or by its dict&#34;&#34;&#34;
+        custom_presets: dict[str, PresetDict] = self.root.configuration.presets or {}
+        if isinstance(preset, str):
+            preset = configuration_presets.get(preset) or custom_presets[preset]
+        if not preset:
+            return
+        self.options_frame.regex_whitelist.set(preset[&#34;regex_whitelist&#34;])
+        self.options_frame.regex_blacklist.set(preset[&#34;regex_blacklist&#34;])
+        self.options_frame.regex_path_whitelist.set(preset[&#34;regex_path_whitelist&#34;])
+        self.options_frame.regex_path_blacklist.set(preset[&#34;regex_path_blacklist&#34;])
+
+    def _treeview_sort_by_column(
+        self, treeview: ttk.Treeview, col: str, descending: bool = False, numeric: bool = False
+    ):
+        &#34;&#34;&#34;Sort treeview by tokens&#34;&#34;&#34;
+        data = [(treeview.set(child, col), child) for child in treeview.get_children(&#34;&#34;)]
+        data.sort(key=lambda x: int(x[0]) if numeric else x[0], reverse=descending)
+        for index, item in enumerate(data):
+            treeview.move(item[1], &#34;&#34;, index)
+        treeview.heading(col, command=lambda: self._treeview_sort_by_column(treeview, col, not descending, numeric))
+
+    def _set_theme(self):
+        &#34;&#34;&#34;Set theme&#34;&#34;&#34;
+        theme = self.theme.get()
+        self.root.set_theme(theme)
+        self.root.configuration.theme = theme
+
+    def generate(self):
+        &#34;&#34;&#34; &#34;Generate completion&#34;&#34;&#34;
+        if not self.openai_options_frame.openai_api_token.get():
+            messagebox.showerror(&#34;Error&#34;, &#34;OpenAI API token is not set&#34;)
+            return
+        if not self.openai_options_frame.selected_model.get():
+            messagebox.showerror(&#34;Error&#34;, &#34;Model is not selected&#34;)
+            return
+        if not self.prompt.get():
+            messagebox.showerror(&#34;Error&#34;, &#34;Prompt is empty&#34;)
+            return
+        self.disable()
+        task = CompletionAPIBackgroundTask(
+            master=self.root,
+            api_token=self.openai_options_frame.openai_api_token.get(),
+            model=self.openai_options_frame.selected_model.get(),
+            prompt=self.prompt.get(),
+            max_tokens=int(self.openai_options_frame.max_tokens.get()),
+            context_provider=self.context_provider,
+        )
+        task(
+            lambda _, result: CompletionDialog(self, result[&#34;result&#34;][&#34;choices&#34;][0][&#34;message&#34;][&#34;content&#34;]),
+            self.show_background_task_error,
+        )
+
+    def show_completion_result(self, _, result: ResultDict):
+        &#34;&#34;&#34;Show completion result&#34;&#34;&#34;
+        self.enable()
+        CompletionDialog(self, result[&#34;result&#34;][&#34;choices&#34;][0][&#34;message&#34;][&#34;content&#34;])
+
+    def show_background_task_error(self, _root: &#34;MainFrame&#34;, result: ErrorDict):
+        &#34;&#34;&#34;Show background task error&#34;&#34;&#34;
+        self.enable()
+        messagebox.showerror(result[&#34;error&#34;], str(result[&#34;exception&#34;]))
+
+    def _configure_children(self, **cnf):
+        &#34;&#34;&#34;Configure children&#34;&#34;&#34;
+        for child in (*self.winfo_children(), *self.filelist.winfo_children()):
+            try:
+                child.configure(**cnf)
+            except tk.TclError:
+                continue
+
+    @property
+    def context_provider(self) -&gt; ContextProvider:
+        &#34;&#34;&#34;Get context provider&#34;&#34;&#34;
+        return ContextProvider(
+            directory=Path(self.project_path.get()),
+            regex_whitelist=self.options_frame.regex_whitelist.get().strip() or None,
+            regex_blacklist=self.options_frame.regex_blacklist.get().strip() or None,
+            regex_path_whitelist=self.options_frame.regex_path_whitelist.get().strip() or None,
+            regex_path_blacklist=self.options_frame.regex_path_blacklist.get().strip() or None,
+            recursive=self.file_options_frame.recursive.get(),
+            allow_hidden_subdirectories=self.file_options_frame.allow_hidden_subdirectories.get(),
+            skip_unreadable=self.file_options_frame.skip_unreadable.get(),
+            skip_empty=self.file_options_frame.skip_empty_files.get(),
+        )
+
+    def scan(self):
+        &#34;&#34;&#34;Scan for files&#34;&#34;&#34;
+        self.disable()
+        self.filelist.delete(*self.filelist.get_children())
+        result_queue = queue.Queue()
+        thread = FileProviderThread(
+            result_queue=result_queue,
+            context_provider=self.context_provider,
+        )
+        thread.start()
+        self.after(100, self._check_queue, result_queue)
+
+    def _check_queue(self, result_queue: queue.Queue):
+        &#34;&#34;&#34;Check if the thread has finished and update the file list&#34;&#34;&#34;
+        if result_queue.empty():
+            self.after(100, self._check_queue, result_queue)
+        else:
+            result = result_queue.get()
+            if &#34;error&#34; in result:
+                self.enable()
+                messagebox.showerror(result[&#34;error&#34;], str(result[&#34;exception&#34;]))
+                return
+            self.options_frame.total_tokens.set(result[&#34;total_tokens&#34;])
+            for file in result[&#34;result&#34;]:
+                self.filelist.insert(&#34;&#34;, &#34;end&#34;, values=(file[&#34;path&#34;], file[&#34;tokens&#34;]))
+            self.enable()
+
+    def browse(self):
+        &#34;&#34;&#34;Browse for project path&#34;&#34;&#34;
+        if path := filedialog.askdirectory(
+            initialdir=self.project_path.get(), title=&#34;Select project directory&#34;, mustexist=True
+        ):
+            self.project_path.set(path)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="openai_helper.ui.main_frame.BackgroundTask"><code class="flex name class">
+<span>class <span class="ident">BackgroundTask</span></span>
+<span>(</span><span>master: <a title="openai_helper.ui.main_frame.MainFrame" href="#openai_helper.ui.main_frame.MainFrame">MainFrame</a>, target, *args, result_queue: queue.Queue | None = None, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Background task</p>
+<p>This constructor should always be called with keyword arguments. Arguments are:</p>
+<p><em>group</em> should be None; reserved for future extension when a ThreadGroup
+class is implemented.</p>
+<p><em>target</em> is the callable object to be invoked by the run()
+method. Defaults to None, meaning nothing is called.</p>
+<p><em>name</em> is the thread name. By default, a unique name is constructed of
+the form "Thread-N" where N is a small decimal number.</p>
+<p><em>args</em> is a list or tuple of arguments for the target invocation. Defaults to ().</p>
+<p><em>kwargs</em> is a dictionary of keyword arguments for the target
+invocation. Defaults to {}.</p>
+<p>If a subclass overrides the constructor, it must make sure to invoke
+the base class constructor (Thread.<strong>init</strong>()) before doing anything
+else to the thread.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BackgroundTask(threading.Thread):
+    &#34;&#34;&#34;Background task&#34;&#34;&#34;
+
+    def __init__(self, master: &#34;MainFrame&#34;, target, *args, result_queue: queue.Queue | None = None, **kwargs):
+        super().__init__()
+        self.master = master
+        self.result_queue = result_queue or queue.Queue()
+        self.target = target
+        self.args = args
+        self.kwargs = kwargs
+
+    def __call__(
+        self,
+        on_success: Callable[[&#34;MainFrame&#34;, ResultDict], None],
+        on_error: Callable[[&#34;MainFrame&#34;, ErrorDict], None] | None = None,
+    ):
+        &#34;&#34;&#34;Call the task and run handlers for either success or error.
+        The handlers are always passed the result dictionary (or error dictionary on error)
+        and the MainFrame instance.
+        &#34;&#34;&#34;
+        self.start()
+        self.master.after(100, self._check_result, on_success, on_error)
+
+    def _check_result(
+        self,
+        on_success: Callable[[&#34;MainFrame&#34;, ResultDict], None],
+        on_error: Callable[[&#34;MainFrame&#34;, ErrorDict], None] | None = None,
+    ):
+        &#34;&#34;&#34;Check if the task has finished and run the appropriate handler&#34;&#34;&#34;
+        if self.result_queue.empty():
+            self.master.after(100, self._check_result, on_success, on_error)
+            return
+        result = self.result_queue.get()
+        if &#34;error&#34; in result:
+            if on_error:
+                on_error(self.master, result)
+            else:
+                messagebox.showerror(result[&#34;error&#34;], str(result[&#34;exception&#34;]))
+        else:
+            on_success(self.master, result)
+
+    def run(self):
+        &#34;&#34;&#34;Run the task&#34;&#34;&#34;
+        try:
+            result = self.target(*self.args, **self.kwargs)
+        except Exception as error:  # pylint: disable=broad-except
+            self.result_queue.put({&#34;error&#34;: &#34;Unexpected error occurred&#34;, &#34;exception&#34;: error})
+            return
+        self.result_queue.put({&#34;result&#34;: result})</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>threading.Thread</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="openai_helper.ui.main_frame.CompletionAPIBackgroundTask" href="#openai_helper.ui.main_frame.CompletionAPIBackgroundTask">CompletionAPIBackgroundTask</a></li>
+<li><a title="openai_helper.ui.main_frame.ModelProviderBackgroundTask" href="#openai_helper.ui.main_frame.ModelProviderBackgroundTask">ModelProviderBackgroundTask</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="openai_helper.ui.main_frame.BackgroundTask.run"><code class="name flex">
+<span>def <span class="ident">run</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Run the task</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def run(self):
+    &#34;&#34;&#34;Run the task&#34;&#34;&#34;
+    try:
+        result = self.target(*self.args, **self.kwargs)
+    except Exception as error:  # pylint: disable=broad-except
+        self.result_queue.put({&#34;error&#34;: &#34;Unexpected error occurred&#34;, &#34;exception&#34;: error})
+        return
+    self.result_queue.put({&#34;result&#34;: result})</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="openai_helper.ui.main_frame.CompletionAPIBackgroundTask"><code class="flex name class">
+<span>class <span class="ident">CompletionAPIBackgroundTask</span></span>
+<span>(</span><span>master: <a title="openai_helper.ui.main_frame.MainFrame" href="#openai_helper.ui.main_frame.MainFrame">MainFrame</a>, result_queue: queue.Queue | None = None, api_token: str = '', prompt: str = '', context_provider: <a title="openai_helper.context.ContextProvider" href="../context.html#openai_helper.context.ContextProvider">ContextProvider</a> | None = None, max_tokens: int = 500, model: str = 'davinci')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Background task providing an OpenAI completion</p>
+<p>This constructor should always be called with keyword arguments. Arguments are:</p>
+<p><em>group</em> should be None; reserved for future extension when a ThreadGroup
+class is implemented.</p>
+<p><em>target</em> is the callable object to be invoked by the run()
+method. Defaults to None, meaning nothing is called.</p>
+<p><em>name</em> is the thread name. By default, a unique name is constructed of
+the form "Thread-N" where N is a small decimal number.</p>
+<p><em>args</em> is a list or tuple of arguments for the target invocation. Defaults to ().</p>
+<p><em>kwargs</em> is a dictionary of keyword arguments for the target
+invocation. Defaults to {}.</p>
+<p>If a subclass overrides the constructor, it must make sure to invoke
+the base class constructor (Thread.<strong>init</strong>()) before doing anything
+else to the thread.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CompletionAPIBackgroundTask(BackgroundTask):
+    &#34;&#34;&#34;Background task providing an OpenAI completion&#34;&#34;&#34;
+
+    def __init__(
+        self,
+        master: &#34;MainFrame&#34;,
+        result_queue: queue.Queue | None = None,
+        api_token: str = &#34;&#34;,
+        prompt: str = &#34;&#34;,
+        context_provider: ContextProvider | None = None,
+        max_tokens: int = 500,
+        model: str = &#34;davinci&#34;,
+    ):
+        self.api_token = api_token
+        self.prompt = prompt
+        self.context_provider = context_provider
+        self.max_tokens = max_tokens
+        self.model = model
+        super().__init__(master=master, target=self.get_completion, result_queue=result_queue)
+
+    def get_completion(self):
+        &#34;&#34;&#34;Get completion based on provided prompt&#34;&#34;&#34;
+        openai.api_key = self.api_token
+        return openai.ChatCompletion.create(
+            model=self.model,
+            messages=[
+                {&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: self.prompt},
+                {&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: self.context_provider.get_context()},
+            ],
+            max_tokens=self.max_tokens,
+        )</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="openai_helper.ui.main_frame.BackgroundTask" href="#openai_helper.ui.main_frame.BackgroundTask">BackgroundTask</a></li>
+<li>threading.Thread</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="openai_helper.ui.main_frame.CompletionAPIBackgroundTask.get_completion"><code class="name flex">
+<span>def <span class="ident">get_completion</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get completion based on provided prompt</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_completion(self):
+    &#34;&#34;&#34;Get completion based on provided prompt&#34;&#34;&#34;
+    openai.api_key = self.api_token
+    return openai.ChatCompletion.create(
+        model=self.model,
+        messages=[
+            {&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: self.prompt},
+            {&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: self.context_provider.get_context()},
+        ],
+        max_tokens=self.max_tokens,
+    )</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="openai_helper.ui.main_frame.BackgroundTask" href="#openai_helper.ui.main_frame.BackgroundTask">BackgroundTask</a></b></code>:
+<ul class="hlist">
+<li><code><a title="openai_helper.ui.main_frame.BackgroundTask.run" href="#openai_helper.ui.main_frame.BackgroundTask.run">run</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="openai_helper.ui.main_frame.CompletionDialog"><code class="flex name class">
+<span>class <span class="ident">CompletionDialog</span></span>
+<span>(</span><span>master: <a title="openai_helper.ui.main_frame.MainFrame" href="#openai_helper.ui.main_frame.MainFrame">MainFrame</a>, completion: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Dialog for OpenAI completion</p>
+<p>Construct a toplevel widget with the parent MASTER.</p>
+<p>Valid resource names: background, bd, bg, borderwidth, class,
+colormap, container, cursor, height, highlightbackground,
+highlightcolor, highlightthickness, menu, relief, screen, takefocus,
+use, visual, width.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CompletionDialog(tk.Toplevel):
+    &#34;&#34;&#34;Dialog for OpenAI completion&#34;&#34;&#34;
+
+    def __init__(self, master: &#34;MainFrame&#34;, completion: str):
+        self.completion = completion
+        super().__init__(master)
+        self.title(&#34;Completion&#34;)
+        self.textarea = scrolledtext.ScrolledText(self, width=80, height=20)
+        self.textarea.insert(tk.END, self.completion)
+        self.textarea.pack(fill=&#34;both&#34;, expand=True)
+        self.grab_set()
+        self.transient(master.root)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>tkinter.Toplevel</li>
+<li>tkinter.BaseWidget</li>
+<li>tkinter.Misc</li>
+<li>tkinter.Wm</li>
+</ul>
+</dd>
+<dt id="openai_helper.ui.main_frame.ErrorDict"><code class="flex name class">
+<span>class <span class="ident">ErrorDict</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>dict() -&gt; new empty dictionary
+dict(mapping) -&gt; new dictionary initialized from a mapping object's
+(key, value) pairs
+dict(iterable) -&gt; new dictionary initialized as if via:
+d = {}
+for k, v in iterable:
+d[k] = v
+dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
+in the keyword argument list.
+For example:
+dict(one=1, two=2)</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.dict</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="openai_helper.ui.main_frame.ErrorDict.error"><code class="name">var <span class="ident">error</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="openai_helper.ui.main_frame.ErrorDict.exception"><code class="name">var <span class="ident">exception</span> : Exception</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="openai_helper.ui.main_frame.FileOptionsFrame"><code class="flex name class">
+<span>class <span class="ident">FileOptionsFrame</span></span>
+<span>(</span><span>master: tkinter.ttk.Widget, text: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>File options frame</p>
+<p>Construct a Ttk Labelframe with parent master.</p>
+<p>STANDARD OPTIONS</p>
+<pre><code>class, cursor, style, takefocus
+</code></pre>
+<p>WIDGET-SPECIFIC OPTIONS
+labelanchor, text, underline, padding, labelwidget, width,
+height</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class FileOptionsFrame(ttk.Labelframe):
+    &#34;&#34;&#34;File options frame&#34;&#34;&#34;
+
+    def __init__(self, master: ttk.Widget, text: str):
+        super().__init__(master, text=text)
+        self.recursive = tk.BooleanVar(value=True)
+        self.allow_hidden_subdirectories = tk.BooleanVar(value=False)
+
+        self.skip_unreadable = tk.BooleanVar(value=True)
+        self.skip_empty_files = tk.BooleanVar(value=False)
+        ttk.Checkbutton(self, text=&#34;Recursive&#34;, variable=self.recursive).grid(column=0, row=0, sticky=&#34;w&#34;, padx=5)
+        ttk.Checkbutton(self, text=&#34;Allow hidden subdirectories&#34;, variable=self.allow_hidden_subdirectories).grid(
+            column=1, row=0, sticky=&#34;w&#34;, padx=5
+        )
+        ttk.Checkbutton(self, text=&#34;Skip unreadable files&#34;, variable=self.skip_unreadable).grid(
+            column=0, row=1, sticky=&#34;w&#34;, padx=5
+        )
+        ttk.Checkbutton(self, text=&#34;Skip empty files&#34;, variable=self.skip_empty_files).grid(
+            column=1, row=1, sticky=&#34;w&#34;, padx=5
+        )
+
+        self.grid(column=0, row=5, columnspan=2, sticky=&#34;ew&#34;, padx=5, pady=5)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>tkinter.ttk.Labelframe</li>
+<li>tkinter.ttk.Widget</li>
+<li>tkinter.Widget</li>
+<li>tkinter.BaseWidget</li>
+<li>tkinter.Misc</li>
+<li>tkinter.Pack</li>
+<li>tkinter.Place</li>
+<li>tkinter.Grid</li>
+</ul>
+</dd>
+<dt id="openai_helper.ui.main_frame.FileProviderThread"><code class="flex name class">
+<span>class <span class="ident">FileProviderThread</span></span>
+<span>(</span><span>result_queue: queue.Queue, context_provider: <a title="openai_helper.context.ContextProvider" href="../context.html#openai_helper.context.ContextProvider">ContextProvider</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Thread calculating file paths and their token length</p>
+<p>This constructor should always be called with keyword arguments. Arguments are:</p>
+<p><em>group</em> should be None; reserved for future extension when a ThreadGroup
+class is implemented.</p>
+<p><em>target</em> is the callable object to be invoked by the run()
+method. Defaults to None, meaning nothing is called.</p>
+<p><em>name</em> is the thread name. By default, a unique name is constructed of
+the form "Thread-N" where N is a small decimal number.</p>
+<p><em>args</em> is a list or tuple of arguments for the target invocation. Defaults to ().</p>
+<p><em>kwargs</em> is a dictionary of keyword arguments for the target
+invocation. Defaults to {}.</p>
+<p>If a subclass overrides the constructor, it must make sure to invoke
+the base class constructor (Thread.<strong>init</strong>()) before doing anything
+else to the thread.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class FileProviderThread(threading.Thread):
+    &#34;&#34;&#34;Thread calculating file paths and their token length&#34;&#34;&#34;
+
+    def __init__(
+        self,
+        result_queue: queue.Queue,
+        context_provider: ContextProvider,
+    ):
+        super().__init__()
+        self.result_queue = result_queue
+        self.provider = context_provider
+
+    def run(self):
+        &#34;&#34;&#34;Calculate file paths and their token length&#34;&#34;&#34;
+        try:
+            result = [{&#34;tokens&#34;: tokens, &#34;path&#34;: path} for tokens, path, _ in self.provider.iter_files()]
+        except Exception as error:  # pylint: disable=broad-except
+            self.result_queue.put({&#34;error&#34;: &#34;Unexpected error occurred&#34;, &#34;exception&#34;: error})
+            return
+        total_tokens = sum(file[&#34;tokens&#34;] for file in result)
+        self.result_queue.put({&#34;result&#34;: result, &#34;total_tokens&#34;: total_tokens})</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>threading.Thread</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="openai_helper.ui.main_frame.FileProviderThread.run"><code class="name flex">
+<span>def <span class="ident">run</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculate file paths and their token length</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def run(self):
+    &#34;&#34;&#34;Calculate file paths and their token length&#34;&#34;&#34;
+    try:
+        result = [{&#34;tokens&#34;: tokens, &#34;path&#34;: path} for tokens, path, _ in self.provider.iter_files()]
+    except Exception as error:  # pylint: disable=broad-except
+        self.result_queue.put({&#34;error&#34;: &#34;Unexpected error occurred&#34;, &#34;exception&#34;: error})
+        return
+    total_tokens = sum(file[&#34;tokens&#34;] for file in result)
+    self.result_queue.put({&#34;result&#34;: result, &#34;total_tokens&#34;: total_tokens})</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="openai_helper.ui.main_frame.MainFrame"><code class="flex name class">
+<span>class <span class="ident">MainFrame</span></span>
+<span>(</span><span>root: App)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Main application frame</p>
+<p>Construct a Ttk Frame with parent master.</p>
+<p>STANDARD OPTIONS</p>
+<pre><code>class, cursor, style, takefocus
+</code></pre>
+<p>WIDGET-SPECIFIC OPTIONS</p>
+<pre><code>borderwidth, relief, padding, width, height
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MainFrame(ttk.Frame):
+    &#34;&#34;&#34;Main application frame&#34;&#34;&#34;
+
+    def __init__(self, root: &#34;App&#34;):
+        super().__init__(root)
+        self.root = root
+        self._progress: ProgressDialog | None = None
+
+        self.project_path = tk.StringVar(value=os.getcwd())
+        self.prompt = tk.StringVar(
+            value=(
+                &#34;Write a brief README.md file for this project. &#34;
+                &#34;I will provide all of the files&#39; contents along with the files&#39; relative paths. &#34;
+                &#34;Do not, unless neccessary, comment on individual files but rather on the project&#39;s &#34;
+                &#34;usage and purpose.&#34;
+            )
+        )
+
+        self.theme = tk.StringVar(value=self.root.configuration.theme or &#34;default&#34;)
+        self._set_theme()
+
+        self.main_menu = tk.Menu(self.master)
+        self.theme_menu = tk.Menu(self.main_menu, tearoff=False)
+        for theme in sorted(self.root.themes):
+            self.theme_menu.add_radiobutton(label=theme, command=self._set_theme, value=theme, variable=self.theme)
+        self.main_menu.add_cascade(label=&#34;Theme&#34;, menu=self.theme_menu)
+        self.root.config(menu=self.main_menu)
+
+        self.preset_menu = tk.Menu(self.main_menu, tearoff=False)
+        self._create_preset_menu()
+        self.main_menu.add_cascade(label=&#34;Presets&#34;, menu=self.preset_menu)
+
+        self.pack(fill=&#34;both&#34;, expand=True)  # , padx=10, pady=10)
+
+        label = ttk.Label(self, text=&#34;Project path:&#34;)
+        path_input = ttk.Entry(self, textvariable=self.project_path)
+        button = ttk.Button(self, text=&#34;Browse&#34;)
+        scan_button = ttk.Button(self, text=&#34;Scan&#34;)
+
+        label.grid(column=0, row=0, sticky=&#34;w&#34;, padx=5)
+        path_input.grid(
+            column=1,
+            row=0,
+            sticky=(&#34;ew&#34;),
+            padx=5,
+        )
+        button.grid(column=2, row=0, sticky=&#34;e&#34;, padx=5)
+        scan_button.grid(column=3, row=0, sticky=&#34;w&#34;, pady=5)
+
+        self.options_frame = OptionsFrame(self, text=&#34;Options&#34;)
+        self.file_options_frame = FileOptionsFrame(self.options_frame, text=&#34;File options&#34;)
+
+        self.openai_options_frame = OpenAISettingsFrame(self, text=&#34;OpenAI&#34;)
+
+        self.options_frame.grid(column=0, row=2, columnspan=4, rowspan=6, sticky=&#34;ew&#34;, padx=5, pady=5)
+        self.options_frame.columnconfigure(1, weight=1)
+        self.openai_options_frame.grid(column=0, row=8, columnspan=4, sticky=&#34;ew&#34;, padx=5, pady=5)
+
+        button.bind(&#34;&lt;Button-1&gt;&#34;, lambda _: self.browse())
+        scan_button.bind(&#34;&lt;Button-1&gt;&#34;, lambda _: self.scan())
+
+        self.columnconfigure(1, weight=1)
+
+        self.filelist = ttk.Treeview(self, columns=(&#34;path&#34;, &#34;tokens&#34;), show=&#34;headings&#34;)
+        self.filelist.column(&#34;path&#34;, anchor=&#34;w&#34;, stretch=True)
+        self.filelist.column(&#34;tokens&#34;, anchor=&#34;e&#34;, width=100, stretch=False)
+        self.filelist.heading(&#34;path&#34;, text=&#34;Path&#34;, command=lambda: self._treeview_sort_by_column(self.filelist, &#34;path&#34;))
+        self.filelist.heading(
+            &#34;tokens&#34;,
+            text=&#34;Tokens&#34;,
+            command=lambda: self._treeview_sort_by_column(self.filelist, &#34;tokens&#34;, numeric=True),
+        )
+
+        self.filelist_scroll = ttk.Scrollbar(self, orient=&#34;vertical&#34;, command=self.filelist.yview)
+        self.filelist.grid(column=0, row=1, columnspan=4, sticky=(&#34;nsew&#34;), pady=5)
+        self.filelist_scroll.grid(column=4, row=1, sticky=(&#34;ns&#34;), pady=5)
+        self.filelist.configure(yscrollcommand=self.filelist_scroll.set)
+
+        ttk.Label(self, text=&#34;Prompt:&#34;).grid(column=0, row=11)
+        ttk.Entry(self, textvariable=self.prompt).grid(
+            column=0, row=12, columnspan=5, rowspan=7, sticky=(&#34;nsew&#34;), padx=5, pady=5
+        )
+
+        ttk.Button(self, text=&#34;Generate&#34;, command=self.generate).grid(
+            column=0, row=19, columnspan=5, sticky=(&#34;ew&#34;), padx=5, pady=5
+        )
+
+    def disable(self, title: str = &#34;Please wait...&#34;):
+        &#34;&#34;&#34;Disable all widgets by showing a modal window over the main window&#34;&#34;&#34;
+        self._progress = ProgressDialog(self, title=title)
+
+    def enable(self):
+        &#34;&#34;&#34;Enable all widgets by closing the modal window&#34;&#34;&#34;
+        if self._progress:
+            self._progress.destroy()
+            self._progress = None
+
+    def update_config(self, key: str, value: Any):
+        &#34;&#34;&#34;Update configuration value&#34;&#34;&#34;
+        setattr(self.root.configuration, key, value)
+
+    def _create_preset_menu(self):
+        self.preset_menu.delete(0, &#34;end&#34;)
+        for preset in sorted(configuration_presets):
+            self.preset_menu.add_command(
+                label=preset,
+                command=lambda preset=preset: self.apply_preset(preset),  # type: ignore
+            )
+        self.preset_menu.add_separator()
+        for preset in sorted(self.root.configuration.presets or {}):
+            self.preset_menu.add_command(
+                label=preset,
+                command=lambda preset=preset: self.apply_preset(preset),  # type: ignore
+            )
+        self.preset_menu.add_command(label=&#34;Save current as preset...&#34;, command=self.save_preset)
+
+    def extract_int(self, string: str) -&gt; int:
+        &#34;&#34;&#34;Extract integer from string&#34;&#34;&#34;
+        return int(re.sub(r&#34;\D&#34;, &#34;&#34;, string) or &#34;0&#34;)
+
+    def save_preset(self):
+        &#34;&#34;&#34;Save current configuration as a preset&#34;&#34;&#34;
+        preset_name = simpledialog.askstring(&#34;Save preset&#34;, &#34;Enter preset name&#34;)
+        if not preset_name:
+            return
+        self.root.configuration.presets = {
+            **(self.root.configuration.presets or {}),
+            preset_name: {
+                &#34;regex_whitelist&#34;: self.options_frame.regex_whitelist.get(),
+                &#34;regex_blacklist&#34;: self.options_frame.regex_blacklist.get(),
+                &#34;regex_path_whitelist&#34;: self.options_frame.regex_path_whitelist.get(),
+                &#34;regex_path_blacklist&#34;: self.options_frame.regex_path_blacklist.get(),
+            },
+        }
+        self._create_preset_menu()
+
+    def apply_preset(self, preset: str | PresetDict):
+        &#34;&#34;&#34;Apply predefined preset either by its name or by its dict&#34;&#34;&#34;
+        custom_presets: dict[str, PresetDict] = self.root.configuration.presets or {}
+        if isinstance(preset, str):
+            preset = configuration_presets.get(preset) or custom_presets[preset]
+        if not preset:
+            return
+        self.options_frame.regex_whitelist.set(preset[&#34;regex_whitelist&#34;])
+        self.options_frame.regex_blacklist.set(preset[&#34;regex_blacklist&#34;])
+        self.options_frame.regex_path_whitelist.set(preset[&#34;regex_path_whitelist&#34;])
+        self.options_frame.regex_path_blacklist.set(preset[&#34;regex_path_blacklist&#34;])
+
+    def _treeview_sort_by_column(
+        self, treeview: ttk.Treeview, col: str, descending: bool = False, numeric: bool = False
+    ):
+        &#34;&#34;&#34;Sort treeview by tokens&#34;&#34;&#34;
+        data = [(treeview.set(child, col), child) for child in treeview.get_children(&#34;&#34;)]
+        data.sort(key=lambda x: int(x[0]) if numeric else x[0], reverse=descending)
+        for index, item in enumerate(data):
+            treeview.move(item[1], &#34;&#34;, index)
+        treeview.heading(col, command=lambda: self._treeview_sort_by_column(treeview, col, not descending, numeric))
+
+    def _set_theme(self):
+        &#34;&#34;&#34;Set theme&#34;&#34;&#34;
+        theme = self.theme.get()
+        self.root.set_theme(theme)
+        self.root.configuration.theme = theme
+
+    def generate(self):
+        &#34;&#34;&#34; &#34;Generate completion&#34;&#34;&#34;
+        if not self.openai_options_frame.openai_api_token.get():
+            messagebox.showerror(&#34;Error&#34;, &#34;OpenAI API token is not set&#34;)
+            return
+        if not self.openai_options_frame.selected_model.get():
+            messagebox.showerror(&#34;Error&#34;, &#34;Model is not selected&#34;)
+            return
+        if not self.prompt.get():
+            messagebox.showerror(&#34;Error&#34;, &#34;Prompt is empty&#34;)
+            return
+        self.disable()
+        task = CompletionAPIBackgroundTask(
+            master=self.root,
+            api_token=self.openai_options_frame.openai_api_token.get(),
+            model=self.openai_options_frame.selected_model.get(),
+            prompt=self.prompt.get(),
+            max_tokens=int(self.openai_options_frame.max_tokens.get()),
+            context_provider=self.context_provider,
+        )
+        task(
+            lambda _, result: CompletionDialog(self, result[&#34;result&#34;][&#34;choices&#34;][0][&#34;message&#34;][&#34;content&#34;]),
+            self.show_background_task_error,
+        )
+
+    def show_completion_result(self, _, result: ResultDict):
+        &#34;&#34;&#34;Show completion result&#34;&#34;&#34;
+        self.enable()
+        CompletionDialog(self, result[&#34;result&#34;][&#34;choices&#34;][0][&#34;message&#34;][&#34;content&#34;])
+
+    def show_background_task_error(self, _root: &#34;MainFrame&#34;, result: ErrorDict):
+        &#34;&#34;&#34;Show background task error&#34;&#34;&#34;
+        self.enable()
+        messagebox.showerror(result[&#34;error&#34;], str(result[&#34;exception&#34;]))
+
+    def _configure_children(self, **cnf):
+        &#34;&#34;&#34;Configure children&#34;&#34;&#34;
+        for child in (*self.winfo_children(), *self.filelist.winfo_children()):
+            try:
+                child.configure(**cnf)
+            except tk.TclError:
+                continue
+
+    @property
+    def context_provider(self) -&gt; ContextProvider:
+        &#34;&#34;&#34;Get context provider&#34;&#34;&#34;
+        return ContextProvider(
+            directory=Path(self.project_path.get()),
+            regex_whitelist=self.options_frame.regex_whitelist.get().strip() or None,
+            regex_blacklist=self.options_frame.regex_blacklist.get().strip() or None,
+            regex_path_whitelist=self.options_frame.regex_path_whitelist.get().strip() or None,
+            regex_path_blacklist=self.options_frame.regex_path_blacklist.get().strip() or None,
+            recursive=self.file_options_frame.recursive.get(),
+            allow_hidden_subdirectories=self.file_options_frame.allow_hidden_subdirectories.get(),
+            skip_unreadable=self.file_options_frame.skip_unreadable.get(),
+            skip_empty=self.file_options_frame.skip_empty_files.get(),
+        )
+
+    def scan(self):
+        &#34;&#34;&#34;Scan for files&#34;&#34;&#34;
+        self.disable()
+        self.filelist.delete(*self.filelist.get_children())
+        result_queue = queue.Queue()
+        thread = FileProviderThread(
+            result_queue=result_queue,
+            context_provider=self.context_provider,
+        )
+        thread.start()
+        self.after(100, self._check_queue, result_queue)
+
+    def _check_queue(self, result_queue: queue.Queue):
+        &#34;&#34;&#34;Check if the thread has finished and update the file list&#34;&#34;&#34;
+        if result_queue.empty():
+            self.after(100, self._check_queue, result_queue)
+        else:
+            result = result_queue.get()
+            if &#34;error&#34; in result:
+                self.enable()
+                messagebox.showerror(result[&#34;error&#34;], str(result[&#34;exception&#34;]))
+                return
+            self.options_frame.total_tokens.set(result[&#34;total_tokens&#34;])
+            for file in result[&#34;result&#34;]:
+                self.filelist.insert(&#34;&#34;, &#34;end&#34;, values=(file[&#34;path&#34;], file[&#34;tokens&#34;]))
+            self.enable()
+
+    def browse(self):
+        &#34;&#34;&#34;Browse for project path&#34;&#34;&#34;
+        if path := filedialog.askdirectory(
+            initialdir=self.project_path.get(), title=&#34;Select project directory&#34;, mustexist=True
+        ):
+            self.project_path.set(path)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>tkinter.ttk.Frame</li>
+<li>tkinter.ttk.Widget</li>
+<li>tkinter.Widget</li>
+<li>tkinter.BaseWidget</li>
+<li>tkinter.Misc</li>
+<li>tkinter.Pack</li>
+<li>tkinter.Place</li>
+<li>tkinter.Grid</li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="openai_helper.ui.main_frame.MainFrame.context_provider"><code class="name">var <span class="ident">context_provider</span> : <a title="openai_helper.context.ContextProvider" href="../context.html#openai_helper.context.ContextProvider">ContextProvider</a></code></dt>
+<dd>
+<div class="desc"><p>Get context provider</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def context_provider(self) -&gt; ContextProvider:
+    &#34;&#34;&#34;Get context provider&#34;&#34;&#34;
+    return ContextProvider(
+        directory=Path(self.project_path.get()),
+        regex_whitelist=self.options_frame.regex_whitelist.get().strip() or None,
+        regex_blacklist=self.options_frame.regex_blacklist.get().strip() or None,
+        regex_path_whitelist=self.options_frame.regex_path_whitelist.get().strip() or None,
+        regex_path_blacklist=self.options_frame.regex_path_blacklist.get().strip() or None,
+        recursive=self.file_options_frame.recursive.get(),
+        allow_hidden_subdirectories=self.file_options_frame.allow_hidden_subdirectories.get(),
+        skip_unreadable=self.file_options_frame.skip_unreadable.get(),
+        skip_empty=self.file_options_frame.skip_empty_files.get(),
+    )</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="openai_helper.ui.main_frame.MainFrame.apply_preset"><code class="name flex">
+<span>def <span class="ident">apply_preset</span></span>(<span>self, preset: str | <a title="openai_helper.ui.main_frame.PresetDict" href="#openai_helper.ui.main_frame.PresetDict">PresetDict</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Apply predefined preset either by its name or by its dict</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def apply_preset(self, preset: str | PresetDict):
+    &#34;&#34;&#34;Apply predefined preset either by its name or by its dict&#34;&#34;&#34;
+    custom_presets: dict[str, PresetDict] = self.root.configuration.presets or {}
+    if isinstance(preset, str):
+        preset = configuration_presets.get(preset) or custom_presets[preset]
+    if not preset:
+        return
+    self.options_frame.regex_whitelist.set(preset[&#34;regex_whitelist&#34;])
+    self.options_frame.regex_blacklist.set(preset[&#34;regex_blacklist&#34;])
+    self.options_frame.regex_path_whitelist.set(preset[&#34;regex_path_whitelist&#34;])
+    self.options_frame.regex_path_blacklist.set(preset[&#34;regex_path_blacklist&#34;])</code></pre>
+</details>
+</dd>
+<dt id="openai_helper.ui.main_frame.MainFrame.browse"><code class="name flex">
+<span>def <span class="ident">browse</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Browse for project path</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def browse(self):
+    &#34;&#34;&#34;Browse for project path&#34;&#34;&#34;
+    if path := filedialog.askdirectory(
+        initialdir=self.project_path.get(), title=&#34;Select project directory&#34;, mustexist=True
+    ):
+        self.project_path.set(path)</code></pre>
+</details>
+</dd>
+<dt id="openai_helper.ui.main_frame.MainFrame.disable"><code class="name flex">
+<span>def <span class="ident">disable</span></span>(<span>self, title: str = 'Please wait...')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Disable all widgets by showing a modal window over the main window</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def disable(self, title: str = &#34;Please wait...&#34;):
+    &#34;&#34;&#34;Disable all widgets by showing a modal window over the main window&#34;&#34;&#34;
+    self._progress = ProgressDialog(self, title=title)</code></pre>
+</details>
+</dd>
+<dt id="openai_helper.ui.main_frame.MainFrame.enable"><code class="name flex">
+<span>def <span class="ident">enable</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Enable all widgets by closing the modal window</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def enable(self):
+    &#34;&#34;&#34;Enable all widgets by closing the modal window&#34;&#34;&#34;
+    if self._progress:
+        self._progress.destroy()
+        self._progress = None</code></pre>
+</details>
+</dd>
+<dt id="openai_helper.ui.main_frame.MainFrame.extract_int"><code class="name flex">
+<span>def <span class="ident">extract_int</span></span>(<span>self, string: str) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Extract integer from string</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def extract_int(self, string: str) -&gt; int:
+    &#34;&#34;&#34;Extract integer from string&#34;&#34;&#34;
+    return int(re.sub(r&#34;\D&#34;, &#34;&#34;, string) or &#34;0&#34;)</code></pre>
+</details>
+</dd>
+<dt id="openai_helper.ui.main_frame.MainFrame.generate"><code class="name flex">
+<span>def <span class="ident">generate</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>"Generate completion</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def generate(self):
+    &#34;&#34;&#34; &#34;Generate completion&#34;&#34;&#34;
+    if not self.openai_options_frame.openai_api_token.get():
+        messagebox.showerror(&#34;Error&#34;, &#34;OpenAI API token is not set&#34;)
+        return
+    if not self.openai_options_frame.selected_model.get():
+        messagebox.showerror(&#34;Error&#34;, &#34;Model is not selected&#34;)
+        return
+    if not self.prompt.get():
+        messagebox.showerror(&#34;Error&#34;, &#34;Prompt is empty&#34;)
+        return
+    self.disable()
+    task = CompletionAPIBackgroundTask(
+        master=self.root,
+        api_token=self.openai_options_frame.openai_api_token.get(),
+        model=self.openai_options_frame.selected_model.get(),
+        prompt=self.prompt.get(),
+        max_tokens=int(self.openai_options_frame.max_tokens.get()),
+        context_provider=self.context_provider,
+    )
+    task(
+        lambda _, result: CompletionDialog(self, result[&#34;result&#34;][&#34;choices&#34;][0][&#34;message&#34;][&#34;content&#34;]),
+        self.show_background_task_error,
+    )</code></pre>
+</details>
+</dd>
+<dt id="openai_helper.ui.main_frame.MainFrame.save_preset"><code class="name flex">
+<span>def <span class="ident">save_preset</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Save current configuration as a preset</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_preset(self):
+    &#34;&#34;&#34;Save current configuration as a preset&#34;&#34;&#34;
+    preset_name = simpledialog.askstring(&#34;Save preset&#34;, &#34;Enter preset name&#34;)
+    if not preset_name:
+        return
+    self.root.configuration.presets = {
+        **(self.root.configuration.presets or {}),
+        preset_name: {
+            &#34;regex_whitelist&#34;: self.options_frame.regex_whitelist.get(),
+            &#34;regex_blacklist&#34;: self.options_frame.regex_blacklist.get(),
+            &#34;regex_path_whitelist&#34;: self.options_frame.regex_path_whitelist.get(),
+            &#34;regex_path_blacklist&#34;: self.options_frame.regex_path_blacklist.get(),
+        },
+    }
+    self._create_preset_menu()</code></pre>
+</details>
+</dd>
+<dt id="openai_helper.ui.main_frame.MainFrame.scan"><code class="name flex">
+<span>def <span class="ident">scan</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Scan for files</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def scan(self):
+    &#34;&#34;&#34;Scan for files&#34;&#34;&#34;
+    self.disable()
+    self.filelist.delete(*self.filelist.get_children())
+    result_queue = queue.Queue()
+    thread = FileProviderThread(
+        result_queue=result_queue,
+        context_provider=self.context_provider,
+    )
+    thread.start()
+    self.after(100, self._check_queue, result_queue)</code></pre>
+</details>
+</dd>
+<dt id="openai_helper.ui.main_frame.MainFrame.show_background_task_error"><code class="name flex">
+<span>def <span class="ident">show_background_task_error</span></span>(<span>self, _root: <a title="openai_helper.ui.main_frame.MainFrame" href="#openai_helper.ui.main_frame.MainFrame">MainFrame</a>, result: <a title="openai_helper.ui.main_frame.ErrorDict" href="#openai_helper.ui.main_frame.ErrorDict">ErrorDict</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Show background task error</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show_background_task_error(self, _root: &#34;MainFrame&#34;, result: ErrorDict):
+    &#34;&#34;&#34;Show background task error&#34;&#34;&#34;
+    self.enable()
+    messagebox.showerror(result[&#34;error&#34;], str(result[&#34;exception&#34;]))</code></pre>
+</details>
+</dd>
+<dt id="openai_helper.ui.main_frame.MainFrame.show_completion_result"><code class="name flex">
+<span>def <span class="ident">show_completion_result</span></span>(<span>self, _, result: <a title="openai_helper.ui.main_frame.ResultDict" href="#openai_helper.ui.main_frame.ResultDict">ResultDict</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Show completion result</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show_completion_result(self, _, result: ResultDict):
+    &#34;&#34;&#34;Show completion result&#34;&#34;&#34;
+    self.enable()
+    CompletionDialog(self, result[&#34;result&#34;][&#34;choices&#34;][0][&#34;message&#34;][&#34;content&#34;])</code></pre>
+</details>
+</dd>
+<dt id="openai_helper.ui.main_frame.MainFrame.update_config"><code class="name flex">
+<span>def <span class="ident">update_config</span></span>(<span>self, key: str, value: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Update configuration value</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_config(self, key: str, value: Any):
+    &#34;&#34;&#34;Update configuration value&#34;&#34;&#34;
+    setattr(self.root.configuration, key, value)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="openai_helper.ui.main_frame.ModelProviderBackgroundTask"><code class="flex name class">
+<span>class <span class="ident">ModelProviderBackgroundTask</span></span>
+<span>(</span><span>master: <a title="openai_helper.ui.main_frame.MainFrame" href="#openai_helper.ui.main_frame.MainFrame">MainFrame</a>, result_queue: queue.Queue | None = None, api_token: str = '')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Background task providing OpenAI models</p>
+<p>This constructor should always be called with keyword arguments. Arguments are:</p>
+<p><em>group</em> should be None; reserved for future extension when a ThreadGroup
+class is implemented.</p>
+<p><em>target</em> is the callable object to be invoked by the run()
+method. Defaults to None, meaning nothing is called.</p>
+<p><em>name</em> is the thread name. By default, a unique name is constructed of
+the form "Thread-N" where N is a small decimal number.</p>
+<p><em>args</em> is a list or tuple of arguments for the target invocation. Defaults to ().</p>
+<p><em>kwargs</em> is a dictionary of keyword arguments for the target
+invocation. Defaults to {}.</p>
+<p>If a subclass overrides the constructor, it must make sure to invoke
+the base class constructor (Thread.<strong>init</strong>()) before doing anything
+else to the thread.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ModelProviderBackgroundTask(BackgroundTask):
+    &#34;&#34;&#34;Background task providing OpenAI models&#34;&#34;&#34;
+
+    def __init__(self, master: &#34;MainFrame&#34;, result_queue: queue.Queue | None = None, api_token: str = &#34;&#34;):
+        super().__init__(master=master, target=self.list_models, result_queue=result_queue, api_token=api_token)
+
+    def list_models(self, api_token: str):
+        &#34;&#34;&#34;List OpenAI models&#34;&#34;&#34;
+        openai.api_key = api_token
+        return [
+            model[&#34;id&#34;]
+            for model in openai.Model.list()[&#34;data&#34;]
+            if str(model[&#34;root&#34;]).startswith((&#34;code-&#34;, &#34;text-&#34;, &#34;gpt-&#34;))
+        ]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="openai_helper.ui.main_frame.BackgroundTask" href="#openai_helper.ui.main_frame.BackgroundTask">BackgroundTask</a></li>
+<li>threading.Thread</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="openai_helper.ui.main_frame.ModelProviderBackgroundTask.list_models"><code class="name flex">
+<span>def <span class="ident">list_models</span></span>(<span>self, api_token: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>List OpenAI models</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def list_models(self, api_token: str):
+    &#34;&#34;&#34;List OpenAI models&#34;&#34;&#34;
+    openai.api_key = api_token
+    return [
+        model[&#34;id&#34;]
+        for model in openai.Model.list()[&#34;data&#34;]
+        if str(model[&#34;root&#34;]).startswith((&#34;code-&#34;, &#34;text-&#34;, &#34;gpt-&#34;))
+    ]</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="openai_helper.ui.main_frame.BackgroundTask" href="#openai_helper.ui.main_frame.BackgroundTask">BackgroundTask</a></b></code>:
+<ul class="hlist">
+<li><code><a title="openai_helper.ui.main_frame.BackgroundTask.run" href="#openai_helper.ui.main_frame.BackgroundTask.run">run</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="openai_helper.ui.main_frame.ModelProviderThread"><code class="flex name class">
+<span>class <span class="ident">ModelProviderThread</span></span>
+<span>(</span><span>result_queue: queue.Queue, api_token: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Provide OpenAI models</p>
+<p>This constructor should always be called with keyword arguments. Arguments are:</p>
+<p><em>group</em> should be None; reserved for future extension when a ThreadGroup
+class is implemented.</p>
+<p><em>target</em> is the callable object to be invoked by the run()
+method. Defaults to None, meaning nothing is called.</p>
+<p><em>name</em> is the thread name. By default, a unique name is constructed of
+the form "Thread-N" where N is a small decimal number.</p>
+<p><em>args</em> is a list or tuple of arguments for the target invocation. Defaults to ().</p>
+<p><em>kwargs</em> is a dictionary of keyword arguments for the target
+invocation. Defaults to {}.</p>
+<p>If a subclass overrides the constructor, it must make sure to invoke
+the base class constructor (Thread.<strong>init</strong>()) before doing anything
+else to the thread.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ModelProviderThread(threading.Thread):
+    &#34;&#34;&#34;Provide OpenAI models&#34;&#34;&#34;
+
+    def __init__(self, result_queue: queue.Queue, api_token: str):
+        super().__init__()
+        self.result_queue = result_queue
+        self.api_token = api_token
+
+    def run(self):
+        &#34;&#34;&#34;Provide OpenAI models&#34;&#34;&#34;
+        openai.api_key = self.api_token
+        try:
+            models = [
+                model[&#34;id&#34;]
+                for model in openai.Model.list()[&#34;data&#34;]
+                if str(model[&#34;root&#34;]).startswith((&#34;code-&#34;, &#34;text-&#34;, &#34;gpt-&#34;))
+            ]
+            self.result_queue.put({&#34;result&#34;: sorted(models)})
+        except Exception as error:  # pylint: disable=broad-except
+            self.result_queue.put({&#34;error&#34;: error})</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>threading.Thread</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="openai_helper.ui.main_frame.ModelProviderThread.run"><code class="name flex">
+<span>def <span class="ident">run</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Provide OpenAI models</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def run(self):
+    &#34;&#34;&#34;Provide OpenAI models&#34;&#34;&#34;
+    openai.api_key = self.api_token
+    try:
+        models = [
+            model[&#34;id&#34;]
+            for model in openai.Model.list()[&#34;data&#34;]
+            if str(model[&#34;root&#34;]).startswith((&#34;code-&#34;, &#34;text-&#34;, &#34;gpt-&#34;))
+        ]
+        self.result_queue.put({&#34;result&#34;: sorted(models)})
+    except Exception as error:  # pylint: disable=broad-except
+        self.result_queue.put({&#34;error&#34;: error})</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="openai_helper.ui.main_frame.OpenAISettingsFrame"><code class="flex name class">
+<span>class <span class="ident">OpenAISettingsFrame</span></span>
+<span>(</span><span>master: <a title="openai_helper.ui.main_frame.MainFrame" href="#openai_helper.ui.main_frame.MainFrame">MainFrame</a>, text: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>OpenAI settings frame</p>
+<p>Construct a Ttk Labelframe with parent master.</p>
+<p>STANDARD OPTIONS</p>
+<pre><code>class, cursor, style, takefocus
+</code></pre>
+<p>WIDGET-SPECIFIC OPTIONS
+labelanchor, text, underline, padding, labelwidget, width,
+height</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class OpenAISettingsFrame(ttk.Labelframe):
+    &#34;&#34;&#34;OpenAI settings frame&#34;&#34;&#34;
+
+    def __init__(self, master: &#34;MainFrame&#34;, text: str):
+        super().__init__(master, text=text)
+        self.root = master
+        self.openai_api_token = tk.StringVar(value=self.root.root.configuration.openai_token or &#34;&#34;)
+        self.selected_model = tk.StringVar(value=self.root.root.configuration.openai_model or &#34;&#34;)
+        self.max_tokens = tk.StringVar(value=self.root.root.configuration.openai_max_tokens or &#34;500&#34;)
+        ttk.Label(self, text=&#34;OpenAI API token:&#34;).grid(column=0, row=0, sticky=&#34;w&#34;, padx=5)
+        ttk.Entry(self, textvariable=self.openai_api_token).grid(column=1, columnspan=5, row=0, sticky=(&#34;nsew&#34;), padx=5)
+
+        ttk.Label(self, text=&#34;Model:&#34;).grid(column=0, row=1, sticky=&#34;w&#34;, padx=5)
+        self.models_combobox = ttk.Combobox(self, textvariable=self.selected_model, values=(), state=&#34;readonly&#34;)
+        self.models_combobox.grid(column=1, row=1, columnspan=4, sticky=(&#34;nsew&#34;), padx=5)
+        ttk.Button(self, text=&#34;Refresh models&#34;, command=self.refresh_models).grid(
+            column=5, row=1, sticky=&#34;ew&#34;, padx=5, pady=5
+        )
+
+        ttk.Label(self, text=&#34;Max tokens:&#34;).grid(column=0, row=2, sticky=&#34;w&#34;, padx=5)
+        ttk.Entry(self, textvariable=self.max_tokens).grid(column=1, row=2, sticky=(&#34;nsew&#34;), padx=5)
+
+        self.columnconfigure(1, weight=1)
+        self.openai_api_token.trace_add(
+            &#34;write&#34;,
+            lambda *_: self.root.update_config(&#34;openai_token&#34;, self.openai_api_token.get()),
+        )
+
+        self.selected_model.trace_add(
+            &#34;write&#34;,
+            lambda *_: self.root.update_config(&#34;openai_model&#34;, self.selected_model.get()),
+        )
+
+        self.max_tokens.trace_add(&#34;write&#34;, self._trace_max_tokens)
+
+    def _trace_max_tokens(self, *_):
+        &#34;&#34;&#34;Trace max tokens&#34;&#34;&#34;
+        self.max_tokens.set(str(self.root.extract_int(self.max_tokens.get())))
+        self.root.update_config(&#34;openai_max_tokens&#34;, self.max_tokens.get())
+
+    def refresh_models(self):
+        &#34;&#34;&#34;Refresh list of models&#34;&#34;&#34;
+        if not self.openai_api_token.get():
+            messagebox.showerror(&#34;Error&#34;, &#34;OpenAI API token is not set&#34;)
+            return
+        self.root.disable()
+        task = ModelProviderBackgroundTask(master=self, api_token=self.openai_api_token.get())
+        task(lambda _, result: self.update_models_list(result[&#34;result&#34;]), self.master.show_background_task_error)
+
+    def update_models_list(self, models: list[str]):
+        &#34;&#34;&#34;Update models list&#34;&#34;&#34;
+        self.selected_model.set(&#34;&#34;)
+        self.models_combobox.delete(0, &#34;end&#34;)
+        self.models_combobox[&#34;values&#34;] = tuple(sorted(models))
+        self.root.enable()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>tkinter.ttk.Labelframe</li>
+<li>tkinter.ttk.Widget</li>
+<li>tkinter.Widget</li>
+<li>tkinter.BaseWidget</li>
+<li>tkinter.Misc</li>
+<li>tkinter.Pack</li>
+<li>tkinter.Place</li>
+<li>tkinter.Grid</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="openai_helper.ui.main_frame.OpenAISettingsFrame.refresh_models"><code class="name flex">
+<span>def <span class="ident">refresh_models</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Refresh list of models</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def refresh_models(self):
+    &#34;&#34;&#34;Refresh list of models&#34;&#34;&#34;
+    if not self.openai_api_token.get():
+        messagebox.showerror(&#34;Error&#34;, &#34;OpenAI API token is not set&#34;)
+        return
+    self.root.disable()
+    task = ModelProviderBackgroundTask(master=self, api_token=self.openai_api_token.get())
+    task(lambda _, result: self.update_models_list(result[&#34;result&#34;]), self.master.show_background_task_error)</code></pre>
+</details>
+</dd>
+<dt id="openai_helper.ui.main_frame.OpenAISettingsFrame.update_models_list"><code class="name flex">
+<span>def <span class="ident">update_models_list</span></span>(<span>self, models: list[str])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Update models list</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_models_list(self, models: list[str]):
+    &#34;&#34;&#34;Update models list&#34;&#34;&#34;
+    self.selected_model.set(&#34;&#34;)
+    self.models_combobox.delete(0, &#34;end&#34;)
+    self.models_combobox[&#34;values&#34;] = tuple(sorted(models))
+    self.root.enable()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="openai_helper.ui.main_frame.OptionsFrame"><code class="flex name class">
+<span>class <span class="ident">OptionsFrame</span></span>
+<span>(</span><span>master: tkinter.ttk.Widget, text: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Options frame</p>
+<p>Construct a Ttk Labelframe with parent master.</p>
+<p>STANDARD OPTIONS</p>
+<pre><code>class, cursor, style, takefocus
+</code></pre>
+<p>WIDGET-SPECIFIC OPTIONS
+labelanchor, text, underline, padding, labelwidget, width,
+height</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class OptionsFrame(ttk.Labelframe):
+    &#34;&#34;&#34;Options frame&#34;&#34;&#34;
+
+    def __init__(self, master: ttk.Widget, text: str):
+        super().__init__(master, text=text)
+        self.total_tokens = tk.IntVar(value=0)
+        self.regex_whitelist = tk.StringVar(value=r&#34;&#34;)
+        self.regex_blacklist = tk.StringVar(value=r&#34;&#34;)
+        self.regex_path_whitelist = tk.StringVar(value=r&#34;&#34;)
+        self.regex_path_blacklist = tk.StringVar(value=r&#34;&#34;)
+        ttk.Label(self, text=&#34;Total tokens:&#34;).grid(column=0, row=0, sticky=&#34;w&#34;, padx=5)
+        ttk.Label(self, textvariable=self.total_tokens).grid(column=1, row=0, sticky=&#34;w&#34;, padx=5)
+
+        ttk.Label(self, text=&#34;Regex whitelist:&#34;).grid(column=0, row=1, sticky=&#34;w&#34;, padx=5)
+        ttk.Entry(self, textvariable=self.regex_whitelist).grid(column=1, row=1, columnspan=5, sticky=(&#34;ew&#34;), padx=5)
+        ttk.Label(self, text=&#34;Regex blacklist:&#34;).grid(column=0, row=2, sticky=&#34;w&#34;, padx=5)
+        ttk.Entry(self, textvariable=self.regex_blacklist).grid(column=1, row=2, columnspan=5, sticky=(&#34;ew&#34;), padx=5)
+        ttk.Label(self, text=&#34;Regex path whitelist:&#34;).grid(column=0, row=3, sticky=&#34;w&#34;, padx=5)
+        ttk.Entry(self, textvariable=self.regex_path_whitelist).grid(
+            column=1, row=3, columnspan=5, sticky=(&#34;ew&#34;), padx=5
+        )
+        ttk.Label(self, text=&#34;Regex path blacklist:&#34;).grid(column=0, row=4, sticky=&#34;w&#34;, padx=5)
+        ttk.Entry(self, textvariable=self.regex_path_blacklist).grid(
+            column=1, row=4, columnspan=5, sticky=(&#34;ew&#34;), padx=5
+        )</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>tkinter.ttk.Labelframe</li>
+<li>tkinter.ttk.Widget</li>
+<li>tkinter.Widget</li>
+<li>tkinter.BaseWidget</li>
+<li>tkinter.Misc</li>
+<li>tkinter.Pack</li>
+<li>tkinter.Place</li>
+<li>tkinter.Grid</li>
+</ul>
+</dd>
+<dt id="openai_helper.ui.main_frame.PresetDict"><code class="flex name class">
+<span>class <span class="ident">PresetDict</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>dict() -&gt; new empty dictionary
+dict(mapping) -&gt; new dictionary initialized from a mapping object's
+(key, value) pairs
+dict(iterable) -&gt; new dictionary initialized as if via:
+d = {}
+for k, v in iterable:
+d[k] = v
+dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
+in the keyword argument list.
+For example:
+dict(one=1, two=2)</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.dict</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="openai_helper.ui.main_frame.PresetDict.regex_blacklist"><code class="name">var <span class="ident">regex_blacklist</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="openai_helper.ui.main_frame.PresetDict.regex_path_blacklist"><code class="name">var <span class="ident">regex_path_blacklist</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="openai_helper.ui.main_frame.PresetDict.regex_path_whitelist"><code class="name">var <span class="ident">regex_path_whitelist</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="openai_helper.ui.main_frame.PresetDict.regex_whitelist"><code class="name">var <span class="ident">regex_whitelist</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="openai_helper.ui.main_frame.ProgressDialog"><code class="flex name class">
+<span>class <span class="ident">ProgressDialog</span></span>
+<span>(</span><span>master: <a title="openai_helper.ui.main_frame.MainFrame" href="#openai_helper.ui.main_frame.MainFrame">MainFrame</a>, title: str = 'Please wait...')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Display a dialog window to make the user wait</p>
+<p>Construct a toplevel widget with the parent MASTER.</p>
+<p>Valid resource names: background, bd, bg, borderwidth, class,
+colormap, container, cursor, height, highlightbackground,
+highlightcolor, highlightthickness, menu, relief, screen, takefocus,
+use, visual, width.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ProgressDialog(tk.Toplevel):
+    &#34;&#34;&#34;Display a dialog window to make the user wait&#34;&#34;&#34;
+
+    def __init__(self, master: &#34;MainFrame&#34;, title: str = &#34;Please wait...&#34;):
+        super().__init__(master)
+        self.title(title)
+        ttk.Label(self, text=&#34;Please wait, there&#39;s an operation under way...&#34;).pack()
+        self.transient(master.root)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>tkinter.Toplevel</li>
+<li>tkinter.BaseWidget</li>
+<li>tkinter.Misc</li>
+<li>tkinter.Wm</li>
+</ul>
+</dd>
+<dt id="openai_helper.ui.main_frame.ResultDict"><code class="flex name class">
+<span>class <span class="ident">ResultDict</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>dict() -&gt; new empty dictionary
+dict(mapping) -&gt; new dictionary initialized from a mapping object's
+(key, value) pairs
+dict(iterable) -&gt; new dictionary initialized as if via:
+d = {}
+for k, v in iterable:
+d[k] = v
+dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
+in the keyword argument list.
+For example:
+dict(one=1, two=2)</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.dict</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="openai_helper.ui.main_frame.ResultDict.result"><code class="name">var <span class="ident">result</span> : Any</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="openai_helper.ui" href="index.html">openai_helper.ui</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="openai_helper.ui.main_frame.BackgroundTask" href="#openai_helper.ui.main_frame.BackgroundTask">BackgroundTask</a></code></h4>
+<ul class="">
+<li><code><a title="openai_helper.ui.main_frame.BackgroundTask.run" href="#openai_helper.ui.main_frame.BackgroundTask.run">run</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="openai_helper.ui.main_frame.CompletionAPIBackgroundTask" href="#openai_helper.ui.main_frame.CompletionAPIBackgroundTask">CompletionAPIBackgroundTask</a></code></h4>
+<ul class="">
+<li><code><a title="openai_helper.ui.main_frame.CompletionAPIBackgroundTask.get_completion" href="#openai_helper.ui.main_frame.CompletionAPIBackgroundTask.get_completion">get_completion</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="openai_helper.ui.main_frame.CompletionDialog" href="#openai_helper.ui.main_frame.CompletionDialog">CompletionDialog</a></code></h4>
+</li>
+<li>
+<h4><code><a title="openai_helper.ui.main_frame.ErrorDict" href="#openai_helper.ui.main_frame.ErrorDict">ErrorDict</a></code></h4>
+<ul class="">
+<li><code><a title="openai_helper.ui.main_frame.ErrorDict.error" href="#openai_helper.ui.main_frame.ErrorDict.error">error</a></code></li>
+<li><code><a title="openai_helper.ui.main_frame.ErrorDict.exception" href="#openai_helper.ui.main_frame.ErrorDict.exception">exception</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="openai_helper.ui.main_frame.FileOptionsFrame" href="#openai_helper.ui.main_frame.FileOptionsFrame">FileOptionsFrame</a></code></h4>
+</li>
+<li>
+<h4><code><a title="openai_helper.ui.main_frame.FileProviderThread" href="#openai_helper.ui.main_frame.FileProviderThread">FileProviderThread</a></code></h4>
+<ul class="">
+<li><code><a title="openai_helper.ui.main_frame.FileProviderThread.run" href="#openai_helper.ui.main_frame.FileProviderThread.run">run</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="openai_helper.ui.main_frame.MainFrame" href="#openai_helper.ui.main_frame.MainFrame">MainFrame</a></code></h4>
+<ul class="">
+<li><code><a title="openai_helper.ui.main_frame.MainFrame.apply_preset" href="#openai_helper.ui.main_frame.MainFrame.apply_preset">apply_preset</a></code></li>
+<li><code><a title="openai_helper.ui.main_frame.MainFrame.browse" href="#openai_helper.ui.main_frame.MainFrame.browse">browse</a></code></li>
+<li><code><a title="openai_helper.ui.main_frame.MainFrame.context_provider" href="#openai_helper.ui.main_frame.MainFrame.context_provider">context_provider</a></code></li>
+<li><code><a title="openai_helper.ui.main_frame.MainFrame.disable" href="#openai_helper.ui.main_frame.MainFrame.disable">disable</a></code></li>
+<li><code><a title="openai_helper.ui.main_frame.MainFrame.enable" href="#openai_helper.ui.main_frame.MainFrame.enable">enable</a></code></li>
+<li><code><a title="openai_helper.ui.main_frame.MainFrame.extract_int" href="#openai_helper.ui.main_frame.MainFrame.extract_int">extract_int</a></code></li>
+<li><code><a title="openai_helper.ui.main_frame.MainFrame.generate" href="#openai_helper.ui.main_frame.MainFrame.generate">generate</a></code></li>
+<li><code><a title="openai_helper.ui.main_frame.MainFrame.save_preset" href="#openai_helper.ui.main_frame.MainFrame.save_preset">save_preset</a></code></li>
+<li><code><a title="openai_helper.ui.main_frame.MainFrame.scan" href="#openai_helper.ui.main_frame.MainFrame.scan">scan</a></code></li>
+<li><code><a title="openai_helper.ui.main_frame.MainFrame.show_background_task_error" href="#openai_helper.ui.main_frame.MainFrame.show_background_task_error">show_background_task_error</a></code></li>
+<li><code><a title="openai_helper.ui.main_frame.MainFrame.show_completion_result" href="#openai_helper.ui.main_frame.MainFrame.show_completion_result">show_completion_result</a></code></li>
+<li><code><a title="openai_helper.ui.main_frame.MainFrame.update_config" href="#openai_helper.ui.main_frame.MainFrame.update_config">update_config</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="openai_helper.ui.main_frame.ModelProviderBackgroundTask" href="#openai_helper.ui.main_frame.ModelProviderBackgroundTask">ModelProviderBackgroundTask</a></code></h4>
+<ul class="">
+<li><code><a title="openai_helper.ui.main_frame.ModelProviderBackgroundTask.list_models" href="#openai_helper.ui.main_frame.ModelProviderBackgroundTask.list_models">list_models</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="openai_helper.ui.main_frame.ModelProviderThread" href="#openai_helper.ui.main_frame.ModelProviderThread">ModelProviderThread</a></code></h4>
+<ul class="">
+<li><code><a title="openai_helper.ui.main_frame.ModelProviderThread.run" href="#openai_helper.ui.main_frame.ModelProviderThread.run">run</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="openai_helper.ui.main_frame.OpenAISettingsFrame" href="#openai_helper.ui.main_frame.OpenAISettingsFrame">OpenAISettingsFrame</a></code></h4>
+<ul class="">
+<li><code><a title="openai_helper.ui.main_frame.OpenAISettingsFrame.refresh_models" href="#openai_helper.ui.main_frame.OpenAISettingsFrame.refresh_models">refresh_models</a></code></li>
+<li><code><a title="openai_helper.ui.main_frame.OpenAISettingsFrame.update_models_list" href="#openai_helper.ui.main_frame.OpenAISettingsFrame.update_models_list">update_models_list</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="openai_helper.ui.main_frame.OptionsFrame" href="#openai_helper.ui.main_frame.OptionsFrame">OptionsFrame</a></code></h4>
+</li>
+<li>
+<h4><code><a title="openai_helper.ui.main_frame.PresetDict" href="#openai_helper.ui.main_frame.PresetDict">PresetDict</a></code></h4>
+<ul class="">
+<li><code><a title="openai_helper.ui.main_frame.PresetDict.regex_blacklist" href="#openai_helper.ui.main_frame.PresetDict.regex_blacklist">regex_blacklist</a></code></li>
+<li><code><a title="openai_helper.ui.main_frame.PresetDict.regex_path_blacklist" href="#openai_helper.ui.main_frame.PresetDict.regex_path_blacklist">regex_path_blacklist</a></code></li>
+<li><code><a title="openai_helper.ui.main_frame.PresetDict.regex_path_whitelist" href="#openai_helper.ui.main_frame.PresetDict.regex_path_whitelist">regex_path_whitelist</a></code></li>
+<li><code><a title="openai_helper.ui.main_frame.PresetDict.regex_whitelist" href="#openai_helper.ui.main_frame.PresetDict.regex_whitelist">regex_whitelist</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="openai_helper.ui.main_frame.ProgressDialog" href="#openai_helper.ui.main_frame.ProgressDialog">ProgressDialog</a></code></h4>
+</li>
+<li>
+<h4><code><a title="openai_helper.ui.main_frame.ResultDict" href="#openai_helper.ui.main_frame.ResultDict">ResultDict</a></code></h4>
+<ul class="">
+<li><code><a title="openai_helper.ui.main_frame.ResultDict.result" href="#openai_helper.ui.main_frame.ResultDict.result">result</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
