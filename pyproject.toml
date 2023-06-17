@@ -1,0 +1,53 @@
+[tool.poetry]
+name = "openai_helper"
+version = "0.1.0"
+description = ""
+authors = ["Tomas Votava <info@tomasvotava.eu>"]
+
+
+[tool.poetry.group.dev.dependencies]
+black = ">=22.10.0"
+pylint = ">=2.15.5"
+mypy = ">=0.991"
+poethepoet = ">=0.16.4"
+isort = ">=5.10.1"
+pdoc3 = ">=0.10.0"
+
+[tool.black]
+line-length = 120
+
+[tool.pytest.ini_options]
+testpaths = ["tests/"]
+addopts = "-v --cov=openai_helper --cov-report xml:cov.xml"
+
+[tool.pyright]
+ignore = "**/tests/"
+
+[tool.poe.tasks]
+isort = "isort openai_helper/"
+isort-check = "isort --check openai_helper/"
+black = "black openai_helper/"
+black-check = "black --check openai_helper/"
+mypy = "mypy --config-file mypy.ini openai_helper/"
+pylint = "pylint openai_helper/"
+
+format = ["isort", "black"]
+lint = ["isort-check", "black-check", "pylint", "mypy"]
+docs = "pdoc3 --html --output-dir docs openai_helper"
+build = "poetry build"
+docker = "docker build -t bizztreat/openai_helper ."
+
+run = "python -um openai_helper.main"
+
+[tool.poetry.dependencies]
+python = "^3.9,<3.12"
+openai = "^0.27.8"
+env-proxy = "^0.1.1"
+tiktoken = "^0.4.0"
+python-dotenv = "^1.0.0"
+tk = "^0.1.0"
+ttkthemes = "^3.2.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
