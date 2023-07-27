@@ -15,7 +15,11 @@ class App(ThemedTk):
         super().__init__()
         self.configuration = Configuration(configuration_path)
         self.title("OpenAI Helper")
-        self.attributes("-zoomed", True)
+
+        # Maximize the window on all platforms
+        self.attributes("-zoomed", True)  # For Windows and Linux
+        self.wm_state("zoomed")  # For MacOS
+
         self._create_widgets()
 
     def _create_widgets(self):
