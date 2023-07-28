@@ -1,5 +1,6 @@
 """UI App"""
 
+import sys
 from pathlib import Path
 
 from ttkthemes import ThemedTk
@@ -17,8 +18,10 @@ class App(ThemedTk):
         self.title("OpenAI Helper")
 
         # Maximize the window on all platforms
-        self.attributes("-zoomed", True)  # For Windows and Linux
-        self.wm_state("zoomed")  # For MacOS
+        if sys.platform == "darwin":
+            self.wm_state("zoomed")  # For MacOS
+        else:
+            self.attributes("-zoomed", True)  # For Windows and Linux
 
         self._create_widgets()
 
